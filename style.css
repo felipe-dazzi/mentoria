@@ -1,0 +1,291 @@
+:root {
+    --primary-color: #001F3F; /* Navy */
+    --accent-color: #D4AF37; /* Gold */
+    --accent-glow: rgba(212, 175, 55, 0.4);
+    --bg-dark: #050505;
+    --text-light: #F9F9F9;
+    --danger: #FF3B30;
+    --success: #34C759;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+/* Progress Bar Container */
+.progress-container {
+    width: 100%;
+    background: #111;
+    height: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 87%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #f7e08b);
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: width 1s ease;
+}
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 11px;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* Header & Warning */
+.warning-bar {
+    background: var(--danger);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: flash 2s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+header {
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+/* VSL Player */
+.vsl-container {
+    background: #000;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    border: 3px solid var(--accent-color);
+    border-radius: 12px;
+    box-shadow: 0 0 30px var(--accent-glow);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.vsl-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Offer Section */
+.offer-box {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 60px;
+}
+
+.product-mockup {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.benefit-list {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.benefit-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.benefit-list li::before {
+    content: "✓";
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Pricing Section */
+.pricing {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 20px;
+}
+
+.new-price {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--accent-color);
+    display: block;
+    margin: 10px 0;
+}
+
+.price-note {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Buttons */
+.cta-button {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #28A745, #1E7E34);
+    color: white;
+    text-decoration: none;
+    padding: 22px;
+    border-radius: 12px;
+    font-size: clamp(18px, 4vw, 24px);
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(40, 167, 69, 0.5);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+.skip-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: #888;
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.skip-link:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+    border-top: 1px solid #111;
+}
+
+/* Responsive Optimization */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .offer-box {
+        padding: 25px 15px;
+    }
+
+    .benefit-list li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 10px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .cta-button {
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+}
