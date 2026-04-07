@@ -24,46 +24,49 @@ body {
     overflow-x: hidden;
 }
 
-/* Progress Bar Container */
+/* Progress Section */
+.status-header {
+    width: 100%;
+    background: #000;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
 .progress-container {
     width: 100%;
-    background: #111;
-    height: 8px;
+    background: #1a1a1a;
+    height: 12px;
     position: relative;
-    overflow: hidden;
 }
 
 .progress-bar {
     width: 87%;
     height: 100%;
-    background: linear-gradient(90deg, #28A745, #34C759);
-    box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);
-    transition: width 1s ease;
+    background: linear-gradient(90deg, #10b981, #34d399); /* Green exactly like the reference */
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
 }
 
 .progress-text {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 11px;
-    color: var(--accent-color);
-    font-weight: 700;
+    display: block;
+    font-size: 10px;
+    color: #10b981;
+    font-weight: 800;
+    text-align: right;
+    padding: 5px 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Header & Warning */
 .warning-bar {
-    background: var(--danger);
+    background: #dc2626; /* Specific Red */
     color: white;
     text-align: center;
-    padding: 10px;
-    font-weight: 700;
-    font-size: 14px;
+    padding: 12px;
+    font-weight: 800;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    animation: flash 2s infinite;
 }
 
 @keyframes flash {
