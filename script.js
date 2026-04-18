@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
         upsellSection.style.transform = 'translateY(0)';
     }, 500);
 
+    // Mostra botão abaixo do vídeo após 1min15s
+    setTimeout(() => {
+        const vslCta = document.getElementById('vsl-cta');
+        vslCta.style.display = 'block';
+        vslCta.style.opacity = '0';
+        vslCta.style.transition = 'opacity 1s ease';
+        setTimeout(() => { vslCta.style.opacity = '1'; }, 50);
+    }, 75000);
+
     // Skip Link Action (e.g., redirect to thanks page)
     skipLink.addEventListener('click', (e) => {
         e.preventDefault();
